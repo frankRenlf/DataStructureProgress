@@ -64,7 +64,7 @@ public class AVLTree<T> {
 
         // modify the balance factor
         cur = node;
-        while (cur != null) {
+        while (parent != null) {
             if (cur.val > parent.val) {
                 parent.balanceFactor++;
             } else {
@@ -78,28 +78,23 @@ public class AVLTree<T> {
                 // still need to refine previous node
                 cur = parent;
                 parent = cur.parent;
-                if (parent == null) break;
             } else {
                 if (parent.balanceFactor == 2) {
                     if (cur.balanceFactor == 1) {
                         // left rotate
                         rotateLeft(parent);
-                        break;
                     } else {
                         //
-                        break;
                     }
                 } else {
                     if (cur.balanceFactor == 1) {
                         //
-                        break;
                     } else {
                         //right rotate
                         rotateRight(parent);
-                        break;
                     }
-
                 }
+                break;
             }
 //            cur = cur.parent;
         }
