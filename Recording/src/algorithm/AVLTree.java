@@ -64,12 +64,13 @@ public class AVLTree<T> {
 
         // modify the balance factor
         cur = node;
-        while (cur != null ) {
-            if (cur == parent.right) {
+        while (cur != null) {
+            if (cur.val > parent.val) {
                 parent.balanceFactor++;
             } else {
                 parent.balanceFactor--;
             }
+            //
             if (parent.balanceFactor == 0) {
                 // already balanced
                 break;
@@ -77,17 +78,21 @@ public class AVLTree<T> {
                 // still need to refine previous node
                 cur = parent;
                 parent = cur.parent;
-                if(parent==null)break;
+                if (parent == null) break;
             } else {
                 if (parent.balanceFactor == 2) {
                     if (cur.balanceFactor == 1) {
-
+                        // left rotate
+                        rotateLeft(parent);
+                        break;
                     } else {
                         //
+                        break;
                     }
                 } else {
                     if (cur.balanceFactor == 1) {
-
+                        //
+                        break;
                     } else {
                         //right rotate
                         rotateRight(parent);
@@ -96,7 +101,7 @@ public class AVLTree<T> {
 
                 }
             }
-            cur = cur.parent;
+//            cur = cur.parent;
         }
         return true;
     }
@@ -125,6 +130,33 @@ public class AVLTree<T> {
         } else {
             this.root = parentLeft;
         }
+    }
+
+    private void rotateLeft(TreeNode<T> parent) {
+        TreeNode<T> par = parent.parent;
+        TreeNode<T> parentRight = parent.right;
+
+        parent.right = parentRight.left;
+        if (parent.right != null) {
+            parent.right.parent = parent;
+        }
+        parentRight.left = parent;
+        parent.parent = parentRight;
+        //
+        parentRight.balanceFactor = 0;
+        parent.balanceFactor = 0;
+        //
+        parentRight.parent = par;
+        if (par != null) {
+            if (par.val < parentRight.val) {
+                par.right = parentRight;
+            } else {
+                par.left = parentRight;
+            }
+        } else {
+            this.root = parentRight;
+        }
+
     }
 
 
