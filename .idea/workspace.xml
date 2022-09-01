@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3635d9fe-6489-4a61-b678-f30ce25b5424" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recording/src/algorithm/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/algorithm/AVLTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recording/src/test/testAvl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/test/testAvl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Recording/algorithm/AVLTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Recording/algorithm/AVLTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Recording/test/testAvl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Recording/test/testAvl.class" afterDir="false" />
-    </list>
+    <list default="true" id="3635d9fe-6489-4a61-b678-f30ce25b5424" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -77,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1661918304438</updated>
-      <workItem from="1661918305782" duration="11456000" />
+      <workItem from="1661918305782" duration="12297000" />
     </task>
     <servers />
   </component>
@@ -97,13 +91,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Recording/src/test/testAvl.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="18" />
+          <line>33</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Recording/src/test/testAvl.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="19" />
+          <line>27</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
