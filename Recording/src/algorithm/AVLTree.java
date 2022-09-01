@@ -85,10 +85,16 @@ public class AVLTree<T> {
                         rotateLeft(parent);
                     } else {
                         //
+                        rotateRL(parent);
+//                        rotateRight(cur);
+//                        rotateLeft(parent);
                     }
                 } else {
                     if (cur.balanceFactor == 1) {
                         //
+                        rotateLR(parent);
+//                        rotateLeft(cur);
+//                        rotateRight(parent);
                     } else {
                         //right rotate
                         rotateRight(parent);
@@ -99,6 +105,51 @@ public class AVLTree<T> {
 //            cur = cur.parent;
         }
         return true;
+    }
+
+
+    /**
+     * @param parent turn right and left
+     */
+    private void rotateRL(TreeNode<T> parent) {
+        TreeNode<T> subR = parent.right;
+        TreeNode<T> subRL = subR.left;
+        int key = subRL.balanceFactor;
+
+        rotateRight(parent.right);
+        rotateLeft(parent);
+
+        if (key == 1) {
+            subR.balanceFactor = 0;
+            subRL.balanceFactor = 0;
+            parent.balanceFactor = -1;
+        } else {
+            subR.balanceFactor = 1;
+            subRL.balanceFactor = 0;
+            parent.balanceFactor = 0;
+        }
+    }
+
+    /**
+     * @param parent turn left and right
+     */
+    private void rotateLR(TreeNode<T> parent) {
+        TreeNode<T> subL = parent.left;
+        TreeNode<T> subLR = subL.right;
+        int key = subLR.balanceFactor;
+
+        rotateLeft(parent.left);
+        rotateRight(parent);
+
+        if (key == -1) {
+            subL.balanceFactor = 0;
+            subLR.balanceFactor = 0;
+            parent.balanceFactor = 1;
+        } else {
+            subL.balanceFactor = -1;
+            subLR.balanceFactor = 0;
+            parent.balanceFactor = 0;
+        }
     }
 
     private void rotateRight(TreeNode<T> parent) {
