@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3635d9fe-6489-4a61-b678-f30ce25b5424" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Recording/src/algorithm/AVLTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/algorithm/AVLTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recording/src/test/testAvl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/test/testAvl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1661918304438</updated>
       <workItem from="1661918305782" duration="12297000" />
-      <workItem from="1661998705369" duration="3117000" />
+      <workItem from="1661998705369" duration="3462000" />
     </task>
     <servers />
   </component>
@@ -91,13 +89,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Recording/src/test/testAvl.java</url>
-          <line>42</line>
+          <line>50</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Recording/src/test/testAvl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
