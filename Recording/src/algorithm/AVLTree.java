@@ -122,7 +122,7 @@ public class AVLTree<T> {
             subR.balanceFactor = 0;
             subRL.balanceFactor = 0;
             parent.balanceFactor = -1;
-        } else {
+        } else if (key == -1) {
             subR.balanceFactor = 1;
             subRL.balanceFactor = 0;
             parent.balanceFactor = 0;
@@ -144,7 +144,7 @@ public class AVLTree<T> {
             subL.balanceFactor = 0;
             subLR.balanceFactor = 0;
             parent.balanceFactor = 1;
-        } else {
+        } else if (key == 1) {
             subL.balanceFactor = -1;
             subLR.balanceFactor = 0;
             parent.balanceFactor = 0;
@@ -201,8 +201,30 @@ public class AVLTree<T> {
         } else {
             this.root = parentRight;
         }
-
     }
 
+    public void inorder(TreeNode<T> root) {
+        if (root == null) return;
+        inorder(root.left);
+        System.out.print(root.val + " ");
+        inorder(root.right);
+    }
 
+    public int getHeight(TreeNode<T> node) {
+        if (node == null) return 0;
+        int left = getHeight(node.left);
+        int right = getHeight(node.right);
+        return Math.max(left, right) + 1;
+    }
+
+    public boolean isBalanced(TreeNode<T> root) {
+        if (root == null) return true;
+        int left = getHeight(root.left);
+        int right = getHeight(root.right);
+        if (right - left != root.balanceFactor) {
+            System.out.println("bf is invalid");
+            return false;
+        }
+        return Math.abs(left - right) <= 1 && isBalanced(root.left) && isBalanced(root.right);
+    }
 }
