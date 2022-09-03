@@ -73,13 +73,88 @@ public class RBTree {
                     cur = grandParent;
                     parent = cur.parent;
                 } else {
-
+                    if (cur == parent.right) {
+                        rotateLeft(parent);
+                        RBTreeNode tmp = parent;
+                        parent = cur;
+                        cur = tmp;
+                    }
+                    rotateRight(grandParent);
+                    grandParent.color = Color.RED;
+                    parent.color = Color.BLACK;
                 }
             } else {
+                // parent == grandParent.right
+                RBTreeNode uncle = grandParent.left;
+                if (uncle != null && uncle.color == Color.RED) {
+                    parent.color = Color.BLACK;
+                    uncle.color = Color.BLACK;
+                    grandParent.color = Color.RED;
 
+                    cur = grandParent;
+                    parent = cur.parent;
+                } else {
+                    if (cur == parent.left) {
+                        rotateRight(parent);
+                        RBTreeNode tmp = parent;
+                        parent = cur;
+                        cur = tmp;
+                    }
+                    rotateLeft(grandParent);
+                    grandParent.color = Color.RED;
+                    parent.color = Color.BLACK;
+                }
             }
         }
+        return true;
+    }
 
+    private void rotateLeft(RBTreeNode parent) {
+        RBTreeNode par = parent.parent;
+        RBTreeNode parentRight = parent.right;
+
+        parent.right = parentRight.left;
+        if (parent.right != null) {
+            parent.right.parent = parent;
+        }
+        parentRight.left = parent;
+        parent.parent = parentRight;
+        //
+        //
+        parentRight.parent = par;
+        if (par != null) {
+            if (par.val < parentRight.val) {
+                par.right = parentRight;
+            } else {
+                par.left = parentRight;
+            }
+        } else {
+            this.root = parentRight;
+        }
+    }
+
+    private void rotateRight(RBTreeNode parent) {
+        RBTreeNode par = parent.parent;
+        RBTreeNode parentLeft = parent.left;
+
+        parent.left = parentLeft.right;
+        if (parent.left != null) {
+            parent.left.parent = parent;
+        }
+        parentLeft.right = parent;
+        parent.parent = parentLeft;
+        //
+        //
+        parentLeft.parent = par;
+        if (par != null) {
+            if (par.val < parentLeft.val) {
+                par.right = parentLeft;
+            } else {
+                par.left = parentLeft;
+            }
+        } else {
+            this.root = parentLeft;
+        }
     }
 
 }
