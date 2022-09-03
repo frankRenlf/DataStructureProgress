@@ -60,6 +60,25 @@ public class RBTree {
         }
         node.parent = parent;
         cur = node;
+        // adjust color
+        while (parent != null && parent.color == Color.RED) {
+            RBTreeNode grandParent = parent.parent;
+            if (parent == grandParent.left) {
+                RBTreeNode uncle = grandParent.right;
+                if (uncle != null && uncle.color == Color.RED) {
+                    parent.color = Color.BLACK;
+                    uncle.color = Color.BLACK;
+                    grandParent.color = Color.RED;
+
+                    cur = grandParent;
+                    parent = cur.parent;
+                } else {
+
+                }
+            } else {
+
+            }
+        }
 
     }
 
