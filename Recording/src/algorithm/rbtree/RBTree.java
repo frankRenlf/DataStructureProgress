@@ -1,8 +1,5 @@
 package algorithm.rbtree;
 
-import algorithm.avltree.AVLTree;
-
-import java.security.PublicKey;
 
 /**
  * Created with IntelliJ IDEA.
@@ -38,6 +35,7 @@ public class RBTree {
         RBTreeNode node = new RBTreeNode(val);
         if (root == null) {
             root = node;
+            root.color = Color.BLACK;
             return true;
         }
         RBTreeNode parent = null;
@@ -106,6 +104,7 @@ public class RBTree {
                 }
             }
         }
+        root.color = Color.BLACK;
         return true;
     }
 
@@ -156,5 +155,52 @@ public class RBTree {
             this.root = parentLeft;
         }
     }
+
+    public boolean isRBTree(RBTreeNode node) {
+        if (root == null) return true;
+        if (root.color != Color.BLACK) {
+            System.out.println("root is not black");
+        }
+        return checkColor(node) && checkBlackLength(node, 0);
+    }
+
+    public void inorder(RBTreeNode node) {
+        if (node == null) return;
+        inorder(node.left);
+        System.out.print(node.val + " ");
+        inorder(node.right);
+    }
+
+    private int num = 0;
+
+    public boolean checkBlackLength(RBTreeNode node, int count) {
+        if (node == null) {
+            if (num == 0) {
+                num = count;
+                return true;
+            } else {
+                if (count != num) {
+                    System.out.println("black node is not equal in each path");
+                }
+                return count == num;
+            }
+        }
+        if (node.color == Color.BLACK) {
+            count++;
+        }
+        return checkBlackLength(node.left, count) && checkBlackLength(node.right, count);
+    }
+
+    private boolean checkColor(RBTreeNode node) {
+        if (node == null) return true;
+        if (node.color == Color.RED) {
+            if (node.parent != null && node.parent.color == node.color) {
+                System.out.println(node.parent.val + "->" + node.val);
+                return false;
+            }
+        }
+        return checkColor(node.left) && checkColor(node.right);
+    }
+
 
 }
