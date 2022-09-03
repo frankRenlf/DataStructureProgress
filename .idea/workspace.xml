@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3635d9fe-6489-4a61-b678-f30ce25b5424" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recording/src/algorithm/rbtree/RBTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/algorithm/rbtree/RBTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recording/src/test/testAvl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Recording/src/test/testAvl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +76,7 @@
       <workItem from="1661918305782" duration="12297000" />
       <workItem from="1661998705369" duration="11186000" />
       <workItem from="1662087327173" duration="582000" />
-      <workItem from="1662181771091" duration="6385000" />
+      <workItem from="1662181771091" duration="7388000" />
     </task>
     <servers />
   </component>
