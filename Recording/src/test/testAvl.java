@@ -1,6 +1,6 @@
 package test;
 
-import algorithm.AVLTree;
+import algorithm.avltree.AVLTree;
 
 /**
  * Created with IntelliJ IDEA.
